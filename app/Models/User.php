@@ -12,7 +12,7 @@ class User extends Authenticatable
     use SoftDeletes,Btn;
     //软删除标识字段
     protected $dates = ['deleted_at'];
-    //
+    ////设置不允许添加字段  create添加数据时生效
     protected $guarded=[];
     protected $hidden = ['password'];
 
