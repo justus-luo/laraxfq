@@ -10,6 +10,10 @@ class IndexController extends Controller
     //
     public function index()
     {
-        return 1;
+        return view('admin.index.index');
+    }
+    //欢迎页
+    public function welcome(){
+        return view('admin.index.welcome');
     }
 }
