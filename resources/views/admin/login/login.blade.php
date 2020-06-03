@@ -23,7 +23,7 @@
                 <label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
                 <div class="formControls col-xs-8">
                     {{--<input id="" name="username" type="text" placeholder="账户" class="input-text size-L">--}}
-                    <input  name="username" type="text" value="" class="input-text size-L">
+                    <input  name="username" type="text" value="admin" class="input-text size-L">
                 </div>
             </div>
             <div class="row cl">

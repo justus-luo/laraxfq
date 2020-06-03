@@ -2,10 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as AuthUser;
+use App\Models\Traits\Btn;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends AuthUser
+class User extends Authenticatable
 {
-    //设置不允许添加字段
-    protected $guarded = [];
+    //trait类，和继承效果一样
+    use SoftDeletes,Btn;
+    //软删除标识字段
+    protected $dates = ['deleted_at'];
+    //
+    protected $guarded=[];
+    protected $hidden = ['password'];
+
+    //角色属于
+    public function role(){
+        return $this->belongsTo(Role::class,'role_id');
+    }
 }
