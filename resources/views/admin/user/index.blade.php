@@ -82,8 +82,9 @@
                                 <a href="{{route('admin.user.restores',$user['id'])}}"
                                    class="label label-disabled  radius">还原</a>
                             @else
-                                <a href="{{route('admin.user.del',$user->id)}}"
-                                   class="label label-danger radius delbtn">删除</a>
+                                {!! $user->editBtn('admin.user.del') !!}
+                                {{--<a href="{{route('admin.user.del',$user->id)}}"--}}
+                                   {{--class="label label-danger radius delbtn">删除</a>--}}
                             @endif
                         @endif
                     </td>

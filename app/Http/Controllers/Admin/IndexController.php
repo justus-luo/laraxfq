@@ -3,16 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Node;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    //
-    public function index()
-    {
-        return view('admin.index.index');
+    public function index(){
+        $auth = session('admin.auth');
+        //读取菜单
+        $menuData = (new Node())->treeData($auth);
+        return view('admin.index.index',compact('menuData'));
     }
-    //欢迎页
+
     public function welcome(){
         return view('admin.index.welcome');
     }

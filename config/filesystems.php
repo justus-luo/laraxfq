@@ -47,7 +47,11 @@ return [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
-
+        //文章封面上传
+        'article' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/article'),
+        ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
